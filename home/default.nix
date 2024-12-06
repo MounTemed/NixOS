@@ -1,7 +1,7 @@
 {
   imports = [
-    #./programs/default.nix
+    ./programs
     # ./service
-    ./terminal/
+    ./terminal
   ];
 }
