@@ -8,8 +8,8 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: let
-    system = "x86_64-linux"; # Определите систему
-    pkgs = import nixpkgs { inherit system; }; # Импортируйте pkgs
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { inherit system; };
   in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
@@ -26,7 +26,6 @@
       };
     };
 
-    # Добавьте эту секцию для home-manager
     homeConfigurations = {
       laimick = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
