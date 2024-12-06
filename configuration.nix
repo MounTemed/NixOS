@@ -60,11 +60,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   hardware.graphics = {
     enable = true;
   };

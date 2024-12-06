@@ -5,9 +5,14 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: let
+  outputs = inputs@{ nixpkgs, home-manager, hyprland, ... }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in {
