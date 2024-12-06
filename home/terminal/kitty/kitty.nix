@@ -2,7 +2,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      size = 13;
+      size = 11;
       name = "fira-code";
     };
     settings = {

@@ -36,7 +36,6 @@
 
         layout = "dwindle";
 
-        no_cursor_warps = false;
       };
 
       decoration = {
@@ -81,10 +80,6 @@
         preserve_split = true; # you probably want this
       };
 
-      master = {
-        new_is_master = true;
-      };
-
       gestures = {
         workspace_swipe = true;
         workspace_swipe_fingers = 3;
@@ -114,7 +109,7 @@
       bind = [
         "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
-        "$mainMod, Return, exec, alacritty"
+        "$mainMod, Return, exec, kitty"
         "$mainMod, Q, killactive,"
         "$mainMod, N, exec, nautilus"
         "$mainMod, T, togglefloating,"
