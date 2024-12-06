@@ -107,8 +107,8 @@
       ];
 
       exec-once = [
-        waypaper --restore
-        hyprctl setcursor Bibata-Modern-Classic 20
+        "waypaper --restore"
+        "hyprctl setcursor Bibata-Modern-Classic 20"
       ];
 
       bind = [
