@@ -76,11 +76,11 @@
 
       dwindle = {
         pseudotile = true;
-        preserve_split = true;
+        preserve_split = false;
       };
 
       gestures = {
-        workspace_swipe = true;
+        workspace_swipe = false;
         workspace_swipe_fingers = 3;
         workspace_swipe_invert = false;
         workspace_swipe_distance = 200;
@@ -89,7 +89,6 @@
 
       cursor = {
         sync_gsettings_theme = false;
-        warp_on_change_workspace = true;
       };
 
       misc = {
