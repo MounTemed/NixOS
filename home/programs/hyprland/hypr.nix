@@ -48,11 +48,11 @@
         
         shadow = {
           enabled = true;
-          color = "rgba(237, 133, 232, 0.4)";
-          color_inactive = "rgba(163, 88, 232, 1)";
-          range = 50;
+          color = "rgba(237, 133, 232, 0.1)";
+          color_inactive = "rgba(163, 88, 232, 0.4)";
+          range = 15;
           render_power = 1;
-          scale = 0.97;
+          scale = 0.5;
         };
       };
 
