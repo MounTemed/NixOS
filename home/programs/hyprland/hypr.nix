@@ -50,8 +50,8 @@
           enabled = true;
           color = "rgba(237, 133, 232, 0.4)";
           color_inactive = "rgba(163, 88, 232, 1)";
-          range = 100;
-          render_power = 2;
+          range = 50;
+          render_power = 1;
           scale = 0.97;
         };
       };
