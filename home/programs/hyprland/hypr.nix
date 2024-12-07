@@ -31,8 +31,6 @@
         gaps_in = 4;
         gaps_out = 20;
         border_size = 0;
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        "col.inactive_border" = "rgba(595959aa)";
 
         layout = "dwindle";
 
@@ -50,9 +48,8 @@
         
         shadow = {
           enabled = true;
-          color = "rgba(00000055)";
-          ignore_window = true;
-          offset = "0 15";
+          color = "rgba(237, 133, 232, 0.4)";
+          color_inactive = "rgba(163, 88, 232, 1)"
           range = 100;
           render_power = 2;
           scale = 0.97;
@@ -62,22 +59,32 @@
       animations = {
         enabled = true;
 
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-        # bezier = "myBezier, 0.33, 0.82, 0.9, -0.08";
+        bezier = [
+          "md3_standard, 0.2, 0, 0, 1"
+          "md3_decel, 0.05, 0.7, 0.1, 1"
+          "md3_accel, 0.3, 0, 0.8, 0.15"
+          "overshot, 0.05, 0.9, 0.1, 1.1"
+          "crazyshot,0.1, 1.5, 0.76, 0.92"
+          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+          "fluent_decel 0.1, 1, 0, 1"
+          "easeInOutCirc, 0.85, 0, 0.15, 1"
+          "easeOutCirc, 0, 0.55, 0.45, 1"
+        ];
 
         animation = [
-          "windows,     1, 7,  myBezier"
-          "windowsOut,  1, 7,  default, popin 80%"
-          "border,      1, 10, default"
-          "borderangle, 1, 8,  default"
-          "fade,        1, 7,  default"
-          "workspaces,  1, 6,  default"
+          "windows,     1, 3,   overshot, popin 60%"
+          "specialWorkspace,  1, 3, md3_decel, slidevert"
+          "border,      1, 10,  default"
+          "borderangle, 1, 8,   default"
+          "fade,        1, 2,   default"
+          "workspaces,  1, 4.5, md3_decel, slidefade 15%"
+          #"workspaces, 1, 3.5, overshot, slide"
         ];
       };
 
       dwindle = {
-        pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = true; # you probably want this
+        pseudotile = true;
+        preserve_split = true;
       };
 
       gestures = {
