@@ -49,10 +49,10 @@
         shadow = {
           enabled = true;
           color = "rgba(237, 133, 232, 0.1)";
-          color_inactive = "rgba(163, 88, 232, 0.4)";
-          range = 75;
-          render_power = 2;
-          scale = 1;
+          color_inactive = "rgba(163, 88, 232, 0.2)";
+          range = 65;
+          render_power = 1;
+          scale = 0.80;
         };
       };
 
