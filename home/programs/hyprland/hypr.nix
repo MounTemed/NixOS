@@ -18,7 +18,7 @@
         kb_variant = "lang";
         kb_options = "grp:alt_shift_toggle";
 
-        follow_mouse = 2;
+        follow_mouse = 1;
 
         touchpad = {
           natural_scroll = false;
