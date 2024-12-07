@@ -24,13 +24,13 @@
           natural_scroll = false;
         };
 
-        sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0;
       };
 
       general = {
-        gaps_in = 5;
+        gaps_in = 4;
         gaps_out = 20;
-        border_size = 3;
+        border_size = 0;
         "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
 
@@ -103,7 +103,7 @@
 
       exec-once = [
         "waypaper --restore"
-        "hyprctl setcursor Bibata-Modern-Classic 20"
+        "hyprctl setcursor Bibata-Modern-Classic 18"
       ];
 
       bind = [
