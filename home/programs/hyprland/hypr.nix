@@ -66,7 +66,7 @@
           "overshot, 0.05, 0.9, 0.1, 1.1"
           "crazyshot,0.1, 1.5, 0.76, 0.92"
           "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
-          "fluent_decel 0.1, 1, 0, 1"
+          "fluent_decel, 0.1, 1, 0, 1"
           "easeInOutCirc, 0.85, 0, 0.15, 1"
           "easeOutCirc, 0, 0.55, 0.45, 1"
         ];
