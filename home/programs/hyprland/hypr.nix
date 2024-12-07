@@ -8,14 +8,8 @@
 
       monitor = "DP-1,2560x1440@170,0x0,1";
 
-      env = [
-        #
-      ];
-
-
       input = {
         kb_layout = "us,ru";
-        kb_variant = "lang";
         kb_options = "grp:alt_shift_toggle";
 
         follow_mouse = 1;
@@ -31,10 +25,7 @@
         gaps_in = 4;
         gaps_out = 20;
         border_size = 0;
-
         layout = "dwindle";
-
-
       };
 
       decoration = {
@@ -96,12 +87,18 @@
         workspace_swipe_forever = true;
       };
 
+      cursor = {
+        sync_gsettings_theme = false;
+        warp_on_change_workspace = true;
+      };
+
       misc = {
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
         enable_swallow = true;
         render_ahead_of_time = false;
         disable_hyprland_logo = true;
+        middle_click_paste = false;
       };
 
       windowrule = [
