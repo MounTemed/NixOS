@@ -14,6 +14,7 @@
     pavucontrol
     nautilus
     wofi
+    zen-browser
   ];
   programs.git.enable = true;
   # programs.vscode.enable = true;
