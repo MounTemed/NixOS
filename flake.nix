@@ -49,7 +49,6 @@
         inherit pkgs;
         modules = [
           ./home.nix
-          inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
         ];
       };
     };
