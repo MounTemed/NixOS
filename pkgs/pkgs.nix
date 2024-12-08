@@ -10,11 +10,11 @@
     unzip
     waypaper
     wi-clipboard
+    pavucontrol
     nautilus
     wofi
   ];
   programs.git.enable = true;
   programs.vscode.enable = true;
-  programs.pavucontrol.enable = true;
   programs.telegram-desktop.enable = true;
 }
