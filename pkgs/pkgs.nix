@@ -10,7 +10,7 @@
     unzip
     telegram-desktop
     waypaper
-    wi-clipboard
+    wl-clipboard
     pavucontrol
     nautilus
     wofi
