@@ -37,7 +37,10 @@
     homeConfigurations = {
       laimick = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+        modules = [
+           ./home.nix
+           inputs.zen-browser.packages.${pkgs.system}.default
+         ];
       };
     };
   };

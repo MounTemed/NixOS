@@ -116,25 +116,21 @@
 
         ", PRINT, exec, grim - | wl-copy"
 
-        # Move focus with mainMod + arrow keys
         "$mainMod, left,  movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up,    movefocus, u"
         "$mainMod, down,  movefocus, d"
 
-        # Moving windows
         "$mainMod SHIFT, left,  swapwindow, l"
         "$mainMod SHIFT, right, swapwindow, r"
         "$mainMod SHIFT, up,    swapwindow, u"
         "$mainMod SHIFT, down,  swapwindow, d"
 
-        # Window resizing                     X  Y
         "$mainMod CTRL, left,  resizeactive, -60 0"
         "$mainMod CTRL, right, resizeactive,  60 0"
         "$mainMod CTRL, up,    resizeactive,  0 -60"
         "$mainMod CTRL, down,  resizeactive,  0  60"
 
-        # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -146,7 +142,6 @@
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
-        # Move active window to a workspace with mainMod + SHIFT + [0-9]
         "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
         "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
         "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
@@ -158,13 +153,11 @@
         "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
         "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
 
-        # Scroll through existing workspaces with mainMod + scroll
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
       ];
 
-      # Move/resize windows with mainMod + LMB/RMB and dragging
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
