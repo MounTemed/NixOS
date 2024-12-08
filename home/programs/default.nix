@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
     ./hyprland
-    ./zen-browser
+    # ./zen-browser
   ];
 }

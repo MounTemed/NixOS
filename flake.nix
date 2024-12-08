@@ -39,7 +39,6 @@
         inherit pkgs;
         modules = [
            ./home.nix
-           inputs.zen-browser.packages.${pkgs.system}.default
          ];
       };
     };

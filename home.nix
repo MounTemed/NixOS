@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, system, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -23,6 +23,10 @@
     ./home/default.nix
     #./modules/
   ];
+
+  home.packages = with pkgs; [
+    inputs.zen-browser.packages.${system}.default
+  ]
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
