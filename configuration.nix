@@ -93,7 +93,6 @@
     neovim
     firefox
 
-    inputs.zen-browser.packages."${system}".default
   ];
 
   nix.settings = {
