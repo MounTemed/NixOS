@@ -24,11 +24,6 @@
     #./modules/
   ];
 
-  home.packages = [
-    inputs.zen-browser.packages.${pkgs.system}.default
-    # Add other packages you want to install here
-  ];
-
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
