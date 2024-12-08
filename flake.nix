@@ -13,10 +13,7 @@
       submodules = true;
     };
 
-    zen-browser = {
-      url = "github:fufexan/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     ayugram-desktop = {
       url = "github:ayugram-port/ayugram-desktop/release?submodules=1";
@@ -39,7 +36,7 @@
     };
     homeConfigurations = {
       laimick = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs inputs;
+        inherit pkgs;
         modules = [
           ./home.nix
         ];

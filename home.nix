@@ -24,9 +24,6 @@
     #./modules/
   ];
 
-  home.packages = [
-    inputs.zen-browser.packages.${pkgs."x86_64-linux"}.default
-  ];
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

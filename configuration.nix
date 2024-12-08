@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -92,6 +92,8 @@
     kitty
     neovim
     firefox
+
+    inputs.zen-browser.packages."${system}".default
   ];
 
   nix.settings = {
