@@ -2,7 +2,6 @@
 
 {
   home.packages = [
-    zen-browser
-    # Другие пакеты...
+    ZenBrowser
   ];
 }

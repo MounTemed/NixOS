@@ -40,6 +40,10 @@
         modules = [ ./home.nix ];
       };
     };
+
+    packages = {
+      ZenBrowser = zen-browser.packages.${system}.default;
+    };
   };
 
 }
