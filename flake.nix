@@ -3,6 +3,7 @@
   inputs = {
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +40,14 @@
             home-manager.extraSpecialArgs = { inherit inputs; system = "x86_64-linux";};
           }
         ];
+      };
+    };
+    homeConfigurations = {
+      laimick = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+           ./home.nix
+         ];
       };
     };
   };
