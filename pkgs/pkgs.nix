@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, zen-browser, ... }: {
   home.packages = with pkgs; [
     clang
     fastfetch
