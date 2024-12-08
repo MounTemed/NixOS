@@ -21,7 +21,7 @@
 
   };
 
-  outputs = { nixpkgs, home-manager, ayugram-desktop, zen-browser, hyprland, ... } @ inputs: let
+  outputs = inputs @ { nixpkgs, home-manager, ayugram-desktop, zen-browser, hyprland, ... }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in {
