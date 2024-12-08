@@ -1,7 +1,5 @@
 {
-
   inputs = {
-
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     home-manager = {
@@ -30,11 +28,6 @@
         inherit system;
         modules = [
           ./configuration.nix
-          {
-            environment.systemPackages = with pkgs; [
-              inputs.zen-browser.packages."${system}".default
-            ];
-          }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -51,11 +44,9 @@
       laimick = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-           ./home.nix
-         ];
+          ./home.nix
+        ];
       };
     };
   };
-
 }
-

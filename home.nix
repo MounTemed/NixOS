@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, system, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -22,6 +22,11 @@
     #./system/
     ./home
     #./modules/
+  ];
+
+  home.packages = [
+    inputs.zen-browser.packages.${pkgs.system}.default
+    # Add other packages you want to install here
   ];
 
   # This value determines the Home Manager release that your
