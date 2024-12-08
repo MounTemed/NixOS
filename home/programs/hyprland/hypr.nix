@@ -114,7 +114,7 @@
         "$mainMod, T, togglefloating,"
         "$mainMod, R, exec, wofi --show drun"
 
-        ", PRINT, exec, hyprshot -m output --clipboard-only"
+        ", PRINT, exec, grim - | wl-copy"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left,  movefocus, l"
