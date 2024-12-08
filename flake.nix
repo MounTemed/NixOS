@@ -30,6 +30,11 @@
         inherit system;
         modules = [
           ./configuration.nix
+          {
+            environment.systemPackages = with pkgs; [
+              inputs.zen-browser.packages."${system}".default
+            ];
+          }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
