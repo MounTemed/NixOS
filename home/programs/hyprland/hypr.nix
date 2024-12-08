@@ -100,14 +100,9 @@
         middle_click_paste = false;
       };
 
-      windowrule = [
-        "float, ^(imv)$"
-        "float, ^(mpv)$"
-      ];
-
       exec-once = [
         "waypaper --restore"
-        "hyprctl setcursor Bibata-Modern-Classic 18"
+        "hyprctl setcursor Bibata-Modern-Classic 19"
       ];
 
       bind = [
@@ -118,6 +113,8 @@
         "$mainMod, N, exec, nautilus"
         "$mainMod, T, togglefloating,"
         "$mainMod, R, exec, wofi --show drun"
+
+        ", PRINT, exec, hyprshot -m output --clipboard-only"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left,  movefocus, l"
