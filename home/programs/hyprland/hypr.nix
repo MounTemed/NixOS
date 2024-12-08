@@ -103,6 +103,11 @@
       exec-once = [
         "waypaper --restore"
         "hyprctl setcursor Bibata-Modern-Classic 19"
+        "dconf write /org/gnome/desktop/interface/gtk-theme 'Adwaita'"
+        "dconf write /org/gnome/desktop/interface/icon-theme 'Flat-Remix-Red-Dark'"
+        "dconf write /org/gnome/desktop/interface/document-font-name 'Noto Sans Medium 11'"
+        "dconf write /org/gnome/desktop/interface/font-name 'Noto Sans Medium 11'"
+        "dconf write /org/gnome/desktop/interface/monospace-font-name 'Noto Sans Mono Medium 11'"
       ];
 
       bind = [

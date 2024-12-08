@@ -14,6 +14,9 @@
     pavucontrol
     nautilus
     wofi
+    adwaita-qt6
+    flat-remix-icon-theme
+    noto-fonts
   ];
   programs.git.enable = true;
   # programs.vscode.enable = true;

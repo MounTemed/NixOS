@@ -17,9 +17,13 @@
       url = "github:fufexan/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ayugram-desktop.url = "github:/ayugram-port/ayugram-desktop/release?submodules=1";
+
+
   };
 
-  outputs = { nixpkgs, home-manager, zen-browser, hyprland, ... } @ inputs: let
+  outputs = { nixpkgs, home-manager, ayugram-desktop, zen-browser, hyprland, ... } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in {
@@ -45,6 +49,7 @@
         inherit pkgs;
         modules = [
           ./home.nix
+          inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
         ];
       };
     };
