@@ -18,9 +18,9 @@
   };
   
   imports = [
-    #./pkgs/
+    ./pkgs
     #./system/
-    ./home/default.nix
+    ./home
     #./modules/
   ];
 
