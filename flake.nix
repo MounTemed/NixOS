@@ -20,7 +20,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, zen-browser, hyprland, ... }: let
+  outputs = { nixpkgs, home-manager, zen-browser, hyprland, ... } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in {
@@ -30,16 +30,15 @@
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.laimick.imports = [
+              ./home.nix
+            ];
+            home-manager.extraSpecialArgs = { inherit inputs; system = "x86_64-linux";};
+          }
         ];
-      };
-    };
-
-    homeConfigurations = {
-      laimick = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-           ./home.nix
-         ];
       };
     };
   };
