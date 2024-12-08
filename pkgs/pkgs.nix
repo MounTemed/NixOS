@@ -8,6 +8,7 @@
     rsclock
     swww
     unzip
+    telegram-desktop
     waypaper
     wi-clipboard
     pavucontrol
@@ -16,5 +17,4 @@
   ];
   programs.git.enable = true;
   programs.vscode.enable = true;
-  programs.telegram-desktop.enable = true;
 }
