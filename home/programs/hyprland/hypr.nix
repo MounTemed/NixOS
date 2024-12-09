@@ -1,52 +1,94 @@
-{
+{ ... }: {
   wayland.windowManager.hyprland = {
     enable = true;
-    xwayland.enable = true;
-
     settings = {
-      "$mainMod" = "SUPER";
+      env = [
+        "GBM_BACKEND,nvidia-drm;"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia;"
+        "LIBVA_DRIVER_NAME,nvidia;"
+        "SDL_VIDEODRIVER, wayland;"
+        "CLUTTER_BACKEND, wayland;"
+        "EGL_BACKEND, wayland;"
+        "XDG_CURRENT_DESKTOP,Hyprland;"
+        "XDG_SESSION_TYPE,wayland;"
+        "XDG_SESSION_DESKTOP,Hyprland;"
+        "XCURSOR_THEME,Ice;"
+        "XCURSOR_SIZE,20;"
+      ];
 
-      monitor = "DP-1,2560x1440@170,0x0,1";
+      cursor = {
+        no_hardware_cursors = true;
+        no_break_fs_vrr = true;
+      };
+
+      monitor = [ "DP-1,2560x1440@170,0x0,1" ];
+
+      exec-once = [
+        "/usr/lib/polkit-kde-authentication-agent-1"
+        "waypaper --restore"
+        "hyprctl setcursor Ice 20"
+        "hyprlock"
+        "hypridle"
+      ];
 
       input = {
         kb_layout = "us,ru";
+        kb_variant = "lang";
+        kb_model = "";
         kb_options = "grp:alt_shift_toggle";
+        kb_rules = "";
 
         follow_mouse = 1;
 
-        touchpad = {
-          natural_scroll = false;
-        };
+        touchpad = { natural_scroll = false; };
 
         sensitivity = 0;
       };
 
       general = {
-        gaps_in = 4;
-        gaps_out = 20;
+        gaps_in = 7;
+        gaps_out = 7;
         border_size = 0;
+        resize_on_border = false;
+        allow_tearing = false;
         layout = "dwindle";
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 7;
+        active_opacity = 1.0;
+        inactive_opacity = 1.0;
+        drop_shadow = true;
+        shadow_range = 10;
+        shadow_render_power = 2;
+        dim_inactive = false;
+        dim_strength = 0.2;
+        "col.shadow" = "rgba(122, 147, 255, 7.0)";
+        "col.shadow_inactive" = "rgba(162, 148, 254, 0.3)";
+      };
+
+      decoration = {
+        dim_special = 0.5;
 
         blur = {
           enabled = true;
-          size = 16;
-          passes = 2;
+          xray = true;
+          special = false;
           new_optimizations = true;
-        };
-        
-        shadow = {
-          enabled = true;
-          color = "rgba(237, 133, 232, 0.75)";
-          color_inactive = "rgba(163, 88, 232, 0.35)";
-          range = 25;
-          render_power = 1;
-          scale = 0.98;
+          brightness = 1.0;
+          contrast = 1.0;
+          passes = 4;
+          size = 14;
         };
       };
+
+      misc = {
+        force_default_wallpaper = 0;
+        vrr = 1;
+        disable_hyprland_logo = true;
+      };
+
+      "render:explicit_sync" = 1;
 
       animations = {
         enabled = true;
@@ -54,87 +96,59 @@
         bezier = [
           "md3_standard, 0.2, 0, 0, 1"
           "md3_decel, 0.05, 0.7, 0.1, 1"
-          "md3_accel, 0.3, 0, 0.8, 0.15"
+          "md3_accel, 0.3, 0.8, 0.8, 0.15"
           "overshot, 0.05, 0.9, 0.1, 1.1"
-          "crazyshot,0.1, 1.5, 0.76, 0.92"
-          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+          "crazyshot, 0.1, 1.5, 0.76, 0.92"
+          "hyprnostretch, 0.05, 0.9, 0.1, 1"
           "fluent_decel, 0.1, 1, 0, 1"
           "easeInOutCirc, 0.85, 0, 0.15, 1"
-          "easeOutCirc, 0, 0.55, 0.45, 1"
+          "easeOutCirt, 0, 0.55, 0.45, 1"
         ];
 
         animation = [
-          "windows,     1, 3,   overshot, popin 60%"
-          "specialWorkspace,  1, 3, md3_decel, slidevert"
-          "border,      1, 10,  default"
-          "borderangle, 1, 8,   default"
-          "fade,        1, 2,   default"
-          "workspaces,  1, 4.5, md3_decel, slidefade 15%"
-          #"workspaces, 1, 3.5, overshot, slide"
+          "windows, 1, 3, overshot, popin 60%"
+          "windowsOut, 1, 6, default, popin 70%"
+          "border, 1, 10, default"
+          "borderangle, 1, 8, default"
+          "fade, 1, 2, default"
+          "workspaces, 1, 3, md3_decel, slidefade 8%"
+          "specialWorkspace, 1, 3, md3_decel, slidevert"
         ];
       };
 
       dwindle = {
         pseudotile = true;
-        preserve_split = false;
+        preserve_split = true;
       };
 
-      gestures = {
-        workspace_swipe = false;
-        workspace_swipe_fingers = 3;
-        workspace_swipe_invert = false;
-        workspace_swipe_distance = 200;
-        workspace_swipe_forever = true;
-      };
+      gestures = { workspace_swipe = false; };
 
-      cursor = {
-        sync_gsettings_theme = false;
-      };
-
-      misc = {
-        animate_manual_resizes = true;
-        animate_mouse_windowdragging = true;
-        enable_swallow = true;
-        render_ahead_of_time = false;
-        disable_hyprland_logo = true;
-        middle_click_paste = false;
-      };
-
-      exec-once = [
-        "waypaper --restore"
-        "hyprctl setcursor Bibata-Modern-Classic 19"
-        "dconf write /org/gnome/desktop/interface/gtk-theme 'Adwaita'"
-        "dconf write /org/gnome/desktop/interface/icon-theme 'Flat-Remix-Red-Dark'"
-        "dconf write /org/gnome/desktop/interface/document-font-name 'Noto Sans Medium 11'"
-        "dconf write /org/gnome/desktop/interface/font-name 'Noto Sans Medium 11'"
-        "dconf write /org/gnome/desktop/interface/monospace-font-name 'Noto Sans Mono Medium 11'"
-      ];
+      "$mainMod" = "SUPER";
 
       bind = [
-        "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
-        "$mainMod, Return, exec, kitty"
+        "$mainMod, RETURN, exec, kitty"
+        "$mainMod, H, exec, hyprpicker -a"
         "$mainMod, Q, killactive,"
-        "$mainMod, N, exec, nautilus"
+        "$mainMod, N, exec, nemo"
         "$mainMod, T, togglefloating,"
-        "$mainMod, R, exec, wofi --show drun"
-
+        "$mainMod, W, exec, wofi --show drun"
         ", PRINT, exec, grim - | wl-copy"
+        "$mainMod, F, exec, firefox"
+        "$mainMod, C, exec, code --disable-gpu"
+        "$mainMod, R, exec, ~/.config/rofi/launchers/type-6/launcher.sh -show drun"
+        "$mainMod, E, exec, telegram-desktop"
+        "$mainMod, S, exec, spotify"
 
-        "$mainMod, left,  movefocus, l"
+        "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
-        "$mainMod, up,    movefocus, u"
-        "$mainMod, down,  movefocus, d"
+        "$mainMod, up, movefocus, u"
+        "$mainMod, down, movefocus, d"
 
-        "$mainMod SHIFT, left,  swapwindow, l"
-        "$mainMod SHIFT, right, swapwindow, r"
-        "$mainMod SHIFT, up,    swapwindow, u"
-        "$mainMod SHIFT, down,  swapwindow, d"
-
-        "$mainMod CTRL, left,  resizeactive, -60 0"
-        "$mainMod CTRL, right, resizeactive,  60 0"
-        "$mainMod CTRL, up,    resizeactive,  0 -60"
-        "$mainMod CTRL, down,  resizeactive,  0  60"
+        "$mainMod ALT, left, movewindow, l"
+        "$mainMod ALT, right, movewindow, r"
+        "$mainMod ALT, up, movewindow, u"
+        "$mainMod ALT, down, movewindow, d"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -147,26 +161,29 @@
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
 
-        "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-        "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-        "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-        "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-        "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-        "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-        "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-        "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-        "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-        "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
-
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         "$mainMod, mouse_down, workspace, e+1"
         "$mainMod, mouse_up, workspace, e-1"
+
       ];
 
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
+
+      windowrulev2 =
+        [ "float, class:^(Rofi)$" "suppressevent maximize, class:.*" ];
     };
   };
 }
