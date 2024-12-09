@@ -11,7 +11,7 @@
         no_break_fs_vrr = true;
       };
 
-      monitor = [ "DP-1,2560x1440@170,0,1" ];
+      monitor = [ "DP-1,2560x1440@170,0x0,1" ];
 
       exec-once = [
         "waypaper --restore"
