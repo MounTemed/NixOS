@@ -64,7 +64,7 @@
         #"col.shadow" = "rgba(122, 147, 255, 7.0)";
         #"col.shadow_inactive" = "rgba(162, 148, 254, 0.3)";
 	shadow = {
-	  enable = true;
+	  enabled = true;
 	  color = "rgba(122, 147, 255, 7.0)";
 	  color_inactive = "rgba(162, 148, 254, 0.3)";
 	  range = 10;
@@ -135,15 +135,15 @@
         "$mainMod, RETURN, exec, kitty"
         "$mainMod, H, exec, hyprpicker -a"
         "$mainMod, Q, killactive,"
-        "$mainMod, N, exec, nemo"
+        "$mainMod, N, exec, nautilus"
         "$mainMod, T, togglefloating,"
-        "$mainMod, W, exec, wofi --show drun"
+        "$mainMod, R, exec, wofi --show drun"
         ", PRINT, exec, grim - | wl-copy"
-        "$mainMod, F, exec, firefox"
-        "$mainMod, C, exec, code --disable-gpu"
-        "$mainMod, R, exec, ~/.config/rofi/launchers/type-6/launcher.sh -show drun"
-        "$mainMod, E, exec, telegram-desktop"
-        "$mainMod, S, exec, spotify"
+        #"$mainMod, F, exec, firefox"
+        #"$mainMod, C, exec, code --disable-gpu"
+        #"$mainMod, R, exec, ~/.config/rofi/launchers/type-6/launcher.sh -show drun"
+        #"$mainMod, E, exec, telegram-desktop"
+        #"$mainMod, S, exec, spotify"
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
