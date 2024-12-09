@@ -27,8 +27,6 @@
         "/usr/lib/polkit-kde-authentication-agent-1"
         "waypaper --restore"
         "hyprctl setcursor Ice 20"
-        "hyprlock"
-        "hypridle"
       ];
 
       input = {
@@ -58,13 +56,20 @@
         rounding = 7;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-        drop_shadow = true;
-        shadow_range = 10;
-        shadow_render_power = 2;
+        #drop_shadow = true;
+        #shadow_range = 10;
+        #shadow_render_power = 2;
         dim_inactive = false;
         dim_strength = 0.2;
-        "col.shadow" = "rgba(122, 147, 255, 7.0)";
-        "col.shadow_inactive" = "rgba(162, 148, 254, 0.3)";
+        #"col.shadow" = "rgba(122, 147, 255, 7.0)";
+        #"col.shadow_inactive" = "rgba(162, 148, 254, 0.3)";
+	shadow = {
+	  enable = true;
+	  color = "rgba(122, 147, 255, 7.0)";
+	  color_inactive = "rgba(162, 148, 254, 0.3)";
+	  range = 10;
+	  render_power = 2;
+	}; 
       };
 
       decoration = {
