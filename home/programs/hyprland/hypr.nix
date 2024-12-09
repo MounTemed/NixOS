@@ -3,17 +3,7 @@
     enable = true;
     settings = {
       env = [
-        "GBM_BACKEND,nvidia-drm;"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia;"
-        "LIBVA_DRIVER_NAME,nvidia;"
-        "SDL_VIDEODRIVER, wayland;"
-        "CLUTTER_BACKEND, wayland;"
-        "EGL_BACKEND, wayland;"
-        "XDG_CURRENT_DESKTOP,Hyprland;"
-        "XDG_SESSION_TYPE,wayland;"
-        "XDG_SESSION_DESKTOP,Hyprland;"
-        "XCURSOR_THEME,Ice;"
-        "XCURSOR_SIZE,20;"
+        #
       ];
 
       cursor = {
@@ -21,12 +11,11 @@
         no_break_fs_vrr = true;
       };
 
-      monitor = [ "DP-1,2560x1440@170,0x0,1" ];
+      monitor = [ "DP-1,2560x1440@170,0,1" ];
 
       exec-once = [
-        "/usr/lib/polkit-kde-authentication-agent-1"
         "waypaper --restore"
-        "hyprctl setcursor Ice 20"
+        "hyprctl setcursor Bibata-Modern-Classic 19"
       ];
 
       input = {
@@ -56,20 +45,16 @@
         rounding = 7;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-        #drop_shadow = true;
-        #shadow_range = 10;
-        #shadow_render_power = 2;
         dim_inactive = false;
         dim_strength = 0.2;
-        #"col.shadow" = "rgba(122, 147, 255, 7.0)";
-        #"col.shadow_inactive" = "rgba(162, 148, 254, 0.3)";
-	shadow = {
-	  enabled = true;
-	  color = "rgba(122, 147, 255, 7.0)";
-	  color_inactive = "rgba(162, 148, 254, 0.3)";
-	  range = 10;
-	  render_power = 2;
-	}; 
+
+	      shadow = {
+	        enabled = true;
+	        color = "rgba(122, 147, 255, 7.0)";
+	        color_inactive = "rgba(162, 148, 254, 0.3)";
+	        range = 10;
+	        render_power = 2;
+	      }; 
       };
 
       decoration = {
@@ -139,11 +124,7 @@
         "$mainMod, T, togglefloating,"
         "$mainMod, R, exec, wofi --show drun"
         ", PRINT, exec, grim - | wl-copy"
-        #"$mainMod, F, exec, firefox"
-        #"$mainMod, C, exec, code --disable-gpu"
-        #"$mainMod, R, exec, ~/.config/rofi/launchers/type-6/launcher.sh -show drun"
-        #"$mainMod, E, exec, telegram-desktop"
-        #"$mainMod, S, exec, spotify"
+
 
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
