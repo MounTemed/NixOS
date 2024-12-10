@@ -22,9 +22,11 @@
       url = "github:ayugram-port/ayugram-desktop/release?submodules=1";
     };
 
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, ayugram-desktop, zen-browser, hyprland, ... }: let
+  outputs = inputs@{ nixpkgs, self, home-manager, ayugram-desktop, zen-browser, hyprland, ... }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in {
