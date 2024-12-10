@@ -32,7 +32,7 @@
             force_zero_scaling = true;
         };
 
-        cursor {
+        cursor = {
             no_hardware_cursors = true
         };
 
