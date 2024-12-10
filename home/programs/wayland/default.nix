@@ -13,6 +13,10 @@
 
         # launcher
         wofi
+
+        # hyprland
+        hyprland
+        xdg-desktop-portal-hyprland
     ];
 
     home.sessionVariables = {
