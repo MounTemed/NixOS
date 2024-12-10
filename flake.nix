@@ -41,7 +41,7 @@
     };
     homeConfigurations = {
       laimick = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        specialArgs = { inherit inputs; };
         modules = [
           ./home.nix
         ];
