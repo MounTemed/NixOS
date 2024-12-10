@@ -33,6 +33,7 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
@@ -42,7 +43,6 @@
     homeConfigurations = {
       laimick = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        specialArgs = { inherit inputs; };
         modules = [
           ./home.nix
         ];
